@@ -6,4 +6,10 @@ def to_hex(num):
         return (poss_hex[hex_num])
     return to_hex(leftover) + poss_hex[hex_num]
 
-print(to_hex(45))
+
+def hex_color(red,green,blue):
+    final_string = "#" + to_hex(red) + to_hex(green) + to_hex(blue)
+    return final_string
+
+
+print(hex_color(10,32,255))
