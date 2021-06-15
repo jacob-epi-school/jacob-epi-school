@@ -1,7 +1,7 @@
 def is_even(num):
     if(num % 2 == 0):
-        return True;
+        return True
     else:
-        return False;
+        return False
 
-print(is_even(11))
+# print(is_even(11))

@@ -8,8 +8,11 @@ def to_hex(num):
 
 
 def hex_color(red,green,blue):
-    final_string = "#" + to_hex(red) + to_hex(green) + to_hex(blue)
-    return final_string
-
-
-print(hex_color(10,32,255))
+    temp = '#'
+    for item in [red,green,blue]:
+        if item < 0:
+            item = 0
+        elif item > 255:
+            item = 255
+        temp += str(to_hex(item)).replace('0x','').upper().zfill(2)
+    return temp

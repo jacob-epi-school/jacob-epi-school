@@ -1,18 +1,31 @@
-def primes_below(n):
-    
-    out_list = []
-    if(n > 2):
-        out_list.append(2)
-    for num in range(1, n):
-        # all prime numbers are greater than 1
-        if num > 1:
-            for i in range(2, num):
-                if (num % i == 0):
-                    break
-                else:
-                    if(not(num in out_list)):
-                        out_list.append(num)
-    return out_list
 
-print(primes_below(17))
+def primes_below(n):
+    numbers = set(range(n-1, 1, -1))
+    primes = []
+    while numbers:
+        p = numbers.pop()
+        primes.append(p)
+        numbers.difference_update(set(range(p*2, n+1, p)))
+    return primes
+
+  
+def test_primes_below(n):
+    numbers = set(range(n-1, 1, -1))
+    primes = []
+    while numbers:
+        p = numbers.pop()
+        primes.append(p)
+        numbers.difference_update(set(range(p*2, n+1, p)))
+    return primes
+
+for x in range(1000):
+    l=test_primes_below(x)
+    l.sort()
+    s = primes_below(x)
+    s.sort()
+    if(l != s):
+        print("error at ",x)
+
+    
+
 
