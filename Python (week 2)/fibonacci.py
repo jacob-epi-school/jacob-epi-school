@@ -4,7 +4,6 @@ def big_fibonacci(n):
     first_prev_num = 0
     second_prev_num = 0
     cur_num = 1
-    temp_num = cur_num
     while(len(str(cur_num)) != n):
         second_prev_num = first_prev_num
         first_prev_num = cur_num
